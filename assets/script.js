@@ -78,8 +78,9 @@ $(document).ready(function () {
         $.ajax({
           type: "GET",
           url: "https://api.openweathermap.org/data/2.5/uvi?appid=298c5d0a2519392d45c5787e4ff86e60&lat=" + lat + "&lon=" + lon,
-  
-  
+
+
+
         }).then(function (response) {
           console.log(response);
   
@@ -124,7 +125,7 @@ $(document).ready(function () {
         for (var i = 0; i < data.list.length; i++) {
   
           if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
-  
+  // Check wind results
             var titleFive = $("<h3>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
             var imgFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
             var colFive = $("<div>").addClass("col-md-2.5");
@@ -132,9 +133,10 @@ $(document).ready(function () {
             var cardBodyFive = $("<div>").addClass("card-body p-2");
             var humidFive = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
             var tempFive = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " °F");
-  
+            var windFive = $("<p>").addClass("card-text").text("Wind Speed: " + data.list[i].main.wind + " MPH");
+
             //merge and display on page
-            colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive)));
+            colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive, windFive)));
             //append card to column, body to card, and other elements to body
             $("#forecast .row").append(colFive);
           }
@@ -143,3 +145,4 @@ $(document).ready(function () {
     }
   
   });
+

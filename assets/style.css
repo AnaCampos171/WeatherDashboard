@@ -1,0 +1,27 @@
+#forecast {
+    position: absolute;
+}
+
+h1 {
+    margin-bottom: 0%;
+   color: white;
+   background-color: rgb(22, 2, 78);
+}
+
+.col-lg-9 {
+    background-color: gray;
+  }
+
+  .card-body.p-2 {
+    background-color: rgb(22, 2, 78);
+    border-width: bold;
+  }
+
+  #search-button.btn.btn-primary {
+    color: white;
+    background-color: rgb(22, 2, 78);
+    border-color: rgb(22, 2, 78);
+  }
+  #search-button.btn.btn-primary i {
+    color: white;
+  }
